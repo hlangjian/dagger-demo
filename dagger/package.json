@@ -1,0 +1,11 @@
+{
+  "name": "dagger-npm-test-dagger",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@dagger.io/dagger": "^0.21.3"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

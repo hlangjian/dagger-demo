@@ -1,0 +1,20 @@
+{
+  "name": "@huanglangjian/dagger-hello",
+  "version": "0.1.0",
+  "description": "A tiny package built and published via Dagger",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm build"
+  },
+  "keywords": ["dagger", "demo"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  }
+}
