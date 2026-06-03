@@ -21,7 +21,7 @@ jobs:
         with:
           version: "latest"
           module: "./dagger"
-          args: test --source=app
+          args: test --source=.
 
   # Merge 到 main：测试 + 发布
   publish:
@@ -36,6 +36,6 @@ jobs:
         with:
           version: "latest"
           module: "./dagger"
-          args: publish --source=app --npm-token=env:NPM_TOKEN
+          args: publish --source=. --npm-token=env:NPM_TOKEN
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
