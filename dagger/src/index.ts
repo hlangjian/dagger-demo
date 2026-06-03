@@ -49,6 +49,11 @@ export class DaggerNpmTest {
       .withSecretVariable("NPM_TOKEN", npmToken)
       .withExec([
         "sh", "-c",
+        // Debug: verify token is present (show length + prefix only, never the full value)
+        `echo "NPM_TOKEN length: \${#NPM_TOKEN}" && ` +
+        `echo "NPM_TOKEN prefix: \${NPM_TOKEN:0:5}..." && ` +
+        // Write .npmrc so pnpm/npm can auth against the registry
+        `echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > /workspace/.npmrc && ` +
         `pnpm --filter ${FILTER} build && pnpm --filter ${FILTER} publish --no-git-checks --access public`,
       ])
       .stdout()
