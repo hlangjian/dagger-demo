@@ -4,7 +4,7 @@ import { dag, object, func, Directory, Container, Secret } from "@dagger.io/dagg
 function base(): Container {
   return dag
     .container()
-    .from("node:20-alpine")
+    .from("node:22-alpine")
     .withExec(["corepack", "enable", "pnpm"])
 }
 
